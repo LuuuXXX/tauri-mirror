@@ -8,10 +8,6 @@ on:
   push:
     branches:
       - cli-1.6.3
-  pull_request:
-    paths:
-      - '.github/workflows/test-cli-rs.yml'
-      - 'tooling/cli/**'
 
 env:
   RUST_BACKTRACE: 1
