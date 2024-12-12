@@ -59,7 +59,7 @@ jobs:
         with:
           targets: ${{ matrix.config.rust_target }}
 
-      - name: 'Setup Rust'(aarch64-unknown-linux-gnu)
+      - name: 'Setup Rust aarch64-unknown-linux-gnu'
         if: matrix.config.rust_target == 'aarch64-unknown-linux-gnu'
         run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
