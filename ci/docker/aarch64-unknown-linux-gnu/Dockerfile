@@ -7,7 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y \
       build-essential \
-      libgtk-3-dev
+      libgtk-3-dev \
+      curl
 
 # 安装 Rust（确保是适用于 ARM 的目标）
 COPY ci/scripts/install-rust.sh /scripts/
