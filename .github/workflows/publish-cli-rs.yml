@@ -47,11 +47,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up QEMU for ARM64
-        if: matrix.config.rust_target == 'aarch64-unknown-linux-gnu'
-        uses: docker/setup-qemu-action@v2
-        with:
-          platforms: aarch64
+      # - name: Set up QEMU for ARM64
+      #   if: matrix.config.rust_target == 'aarch64-unknown-linux-gnu'
+      #   uses: docker/setup-qemu-action@v2
+      #   with:
+      #     platforms: aarch64
 
       - name: 'Setup Rust'
         uses: dtolnay/rust-toolchain@stable
