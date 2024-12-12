@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches:
-      - cli-1.6.3
+      - cli-1.63.0
 
 jobs:
   build:
