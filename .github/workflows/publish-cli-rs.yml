@@ -54,14 +54,9 @@ jobs:
           platforms: aarch64
 
       - name: 'Setup Rust'
-        if: matrix.config.rust_target != 'aarch64-unknown-linux-gnu'
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.config.rust_target }}
-
-      - name: 'Setup Rust aarch64-unknown-linux-gnu'
-        if: matrix.config.rust_target == 'aarch64-unknown-linux-gnu'
-        run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
       - uses: Swatinem/rust-cache@v2
         with:
@@ -78,7 +73,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: build
-          args: --manifest-path ./tooling/cli/Cargo.toml --release ${{ matrix.config.args }}
+          args: --manifest-path ./tooling/cli/Cargo.toml --release --target ${{ matrix.config.rust_target }} ${{ matrix.config.args }}
 
       - name: Upload CLI
         uses: actions/upload-artifact@v3
