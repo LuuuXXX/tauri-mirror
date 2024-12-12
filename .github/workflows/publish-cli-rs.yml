@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches:
-      - dev
+      - cli-1.6.3
   pull_request:
     paths:
       - '.github/workflows/test-cli-rs.yml'
